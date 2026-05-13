@@ -7,45 +7,78 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
-<div class="container">
-    <div class="add-section">
-        <input type="text" id="taskInput" placeholder="Escribe una tarea...">
-        <button id="addBtn" class="btn">Add Task</button>
+    <div class="container">
+        <div class="data">
+            <table>
+                <caption>Precipitaciones anuales</caption>
+                <thead>
+                    <tr>
+                        <th>Ciudad</th>
+                        <th>2008</th>
+                        <th>2009</th>
+                        <th>2010</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sevilla</td>
+                        <td>50</td>
+                        <td>100</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>Bilbao</td>
+                        <td>250</td>
+                        <td>300</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>Madrid</td>
+                        <td>400</td>
+                        <td>420</td>
+                        <td>325</td>
+                    </tr>
+                    <tr>
+                        <td>Zaragoza</td>
+                        <td>100</td>
+                        <td>150</td>
+                        <td>60</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><button id="representar">Representar</button></p>
+        </div>
+       <div class="graphics">
+
+        <div>
+                <div class="year-2008"></div>
+                <div class="year-2009"></div>
+                <div class="year-2010"></div>
+                <div class="names">Sevilla</div>
+            </div>
+
+            <div>
+                <div class="year-2008"></div>
+                <div class="year-2009"></div>
+                <div class="year-2010"></div>
+                <div class="names">Bilbao</div>
+            </div>
+
+            <div>
+                <div class="year-2008"></div>
+                <div class="year-2009"></div>
+                <div class="year-2010"></div>
+                <div class="names">Madrid</div>
+            </div>
+
+            <div>
+                <div class="year-2008"></div>
+                <div class="year-2009"></div>
+                <div class="year-2010"></div>
+                <div class="names">Zaragoza</div>
+            </div>
+        </div>
     </div>
-
-    <div class="board">
-        <div class="column todo">
-            <h4>TO DO</h4>
-            <div class="tasks" id="todo">
-                <div class="task rojo">
-                    <p>Tarea III</p>
-                    <p class="close">X</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <h4>IN PROCESS</h4>
-            <div class="tasks" id="inprocess">
-                <div class="task azul">
-                    <p>dfadsfds</p>
-                    <p class="close">X</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <h4>DONE</h4>
-            <div class="tasks" id="done">
-                <div class="task verde">
-                    <p>Tarea II</p>
-                    <p class="close">X</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
     <script src="script.js"></script>
 </body>
 </html>
