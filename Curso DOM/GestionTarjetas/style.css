@@ -1,0 +1,83 @@
+body {
+    background-color: #f0f0ed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.add-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#taskInput {
+    padding: 5px;
+    border: 1px solid #000;
+    width: 180px;
+}
+
+#addBtn {
+    background-color: #00b0f0;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.board {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    background-color: transparent;
+    border: 1px solid #999;
+    border-radius: 10px;
+    width: 30%;
+    min-height: 400px;
+    padding: 15px;
+}
+
+.column h4 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.task p {
+    margin: 0;
+}
+
+.close {
+    cursor: pointer;
+    font-weight: bold;
+}
+.task.rojo{
+    background-color: red;
+}
+.task.azul{
+    background-color: blue;
+}
+.task.verde{
+    background-color: green;
+}

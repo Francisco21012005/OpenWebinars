@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+<div class="container">
+    <div class="add-section">
+        <input type="text" id="taskInput" placeholder="Escribe una tarea...">
+        <button id="addBtn" class="btn">Add Task</button>
+    </div>
+
+    <div class="board">
+        <div class="column todo">
+            <h4>TO DO</h4>
+            <div class="tasks" id="todo">
+                <div class="task rojo">
+                    <p>Tarea III</p>
+                    <p class="close">X</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h4>IN PROCESS</h4>
+            <div class="tasks" id="inprocess">
+                <div class="task azul">
+                    <p>dfadsfds</p>
+                    <p class="close">X</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h4>DONE</h4>
+            <div class="tasks" id="done">
+                <div class="task verde">
+                    <p>Tarea II</p>
+                    <p class="close">X</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
