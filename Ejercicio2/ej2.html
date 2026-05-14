@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Selectores eq()</title>
+    <link rel="stylesheet" href="estilos2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+ 
+</head>
+<body>
+
+    <h2>Mis Enlaces</h2>
+    
+    <ul class="iconized">
+        <li>Twitter / X</li>
+        <li>Instagram</li>
+        <li>LinkedIn</li>
+        <li>Facebook</li>
+    </ul>
+
+    <script>
+        $(function () {
+            
+            $(".iconized li").eq(0).css({
+                "color" : "pink",
+                "background" : "green"
+            });
+
+        });
+    </script>
+
+</body>
+</html>

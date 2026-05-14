@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5 - Recorrido DOM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="estilos5.css">
+    
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Examen 1</th>
+                <th>Examen 2</th>
+                <th>Examen 3</th>
+                <th>Nota evaluación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name">Pepe Pérez</td>
+                <td>5</td><td>4</td><td>3</td>
+                <td class="grade">Haz click</td>
+            </tr>
+            <tr>
+                <td class="name">Ana Ramírez</td>
+                <td>6</td><td>3</td><td>5</td>
+                <td class="grade">Haz click</td>
+            </tr>
+            <tr>
+                <td class="name">Rosa Torres</td>
+                <td>9</td><td>3</td><td>9</td>
+                <td class="grade">Haz click</td>
+            </tr>
+            <tr>
+                <td class="name">Sara Gallardo</td>
+                <td>8</td><td>8</td><td>6</td>
+                <td class="grade">Haz click</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="controles">
+        <button id="find">SELECCIONAR PRIMERA COLUMNA - FIND</button>
+        <button id="filter">SELECCIONAR ULTIMA COLUMNA - FILTER</button>
+        <button onclick="location.reload()">RESET</button>
+    </div>
+
+    <script>
+        $(function() {
+            $(".grade").on("click", function(event) {
+                let notas = 0;
+                let total = 0;
+
+                $(this).prevUntil(".name").each(function(index) {
+                    notas++;
+                    total += parseFloat($(this).text());
+                    console.log(index + "---->" + notas + "----" + total);
+                });
+
+                $(this).text(parseFloat(total) / parseFloat(notas));
+            });
+
+            $(".name").mouseenter(function(event) {
+                let nota = parseFloat($(this).siblings(".grade").text());
+
+                if (!isNaN(nota)) {
+                    console.log(nota);
+                    if (nota >= 5) {
+
+                        $(this).nextAll().css("background-color", "green");
+                        $(this).css("background-color", "green");
+                    } else {
+                        $(this).nextAll().css("background-color", "red");
+                        $(this).css("background-color", "red");
+                    }
+                }
+            });
+            $(".name").mouseleave(function() {
+                $(this).nextAll().css("background-color", "white");
+                $(this).css("background-color", "white");
+            });
+
+            $("#find").click(function(event) {
+                $("table").find(".name").css("background-color", "blue");
+            });
+
+            $("#filter").click(function(event) {
+                $("td").filter(":last-child").css("background-color", "pink");
+            });
+        });
+    </script>
+
+</body>
+</html>

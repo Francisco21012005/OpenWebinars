@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Examen 1</th>
+                <th>Examen 2</th>
+                <th>Examen 3</th>
+                <th>Nota evaluación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="reprobado">Pepe Pérez</td>
+                <td class="reprobado">5</td>
+                <td class="reprobado">4</td>
+                <td class="reprobado">3</td>
+                <td class="reprobado">3</td>
+            </tr>
+            <tr>
+                <td class="reprobado">Ana Ramírez</td>
+                <td class="reprobado">6</td>
+                <td class="reprobado">3</td>
+                <td class="reprobado">5</td>
+                <td class="reprobado">3.5</td>
+            </tr>
+            <tr>
+                <td class="aprobado">Rosa Torres</td>
+                <td class="aprobado">9</td>
+                <td class="aprobado">3</td>
+                <td class="aprobado">9</td>
+                <td class="aprobado">5.25</td>
+            </tr>
+            <tr>
+                <td class="aprobado">Sara Gallardo</td>
+                <td class="aprobado">8</td>
+                <td class="aprobado">8</td>
+                <td class="aprobado">6</td>
+                <td class="aprobado">5.5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(function () {
+            var total = 0;
+            var numElementos = 4;
+
+            $("tbody tr").each(function (index) {
+                console.log("ÍNDICE" + "----->" + index);
+
+                let examen1 = $("tbody tr:nth-child(" + (index + 1) + ") td").eq(1).text();
+                console.log("Fila 1" + "-->" + examen1);
+
+                let examen2 = $("tbody tr:nth-child(" + (index + 1) + ") td").eq(2).text();
+                console.log("Fila 2" + "-->" + examen2);
+
+                let examen3 = $("tbody tr:nth-child(" + (index + 1) + ") td").eq(3).text();
+                console.log("Fila 3" + "-->" + examen3);
+
+                let filaTotal = (parseFloat(examen1) + parseFloat(examen2) + parseFloat(examen3)) / 3;
+                console.log("Promedio calculado para fila " + index + ": " + filaTotal.toFixed(2));
+            });
+        });
+    </script>
+</body>
+</html>

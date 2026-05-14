@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+   <h1>Hola Mundo</h1>
+   <h1>Adopción de Mascotas</h1>
+    <p class="introduccion">Haz clic en el botón para resaltar a nuestros amigos.</p>
+
+    <ul id="lista-animales">
+        <li class="animal">Perro Labrador</li>
+        <li class="animal">Gato Siamés</li>
+        <li class="animal">Hámster Ruso</li>
+        <li>Pájaro Canario (No disponible)</li>
+    </ul>
+
+    <div id="contenedor-botones">
+        <button id="btn-resaltar">Resaltar animales</button>
+        <button id="btn-limpiar">Limpiar estilos</button>
+    </div>
+
+    <p id="mensaje-final">¡Gracias por visitar la sección de práctica!</p>
+
+
+
+
+    <script>
+        $(function() {
+            
+            
+            $("#btn-resaltar").click(function() {
+                // 1. Selector de Clase: Seleccionamos todos los .animal
+                $(".animal").addClass("destacado");
+
+                // 2. Selector de ID: Mostramos el mensaje final
+                $("#mensaje-final").fadeIn();
+                
+                // 3. Selector de Elemento: Cambiamos el texto del h1
+                $("h1").text("¡Lista de Mascotas Seleccionada!");
+            });
+
+            $("#btn-limpiar").click(function() {
+                // Quitamos la clase y reseteamos
+                $(".animal").removeClass("destacado");
+                $("#mensaje-final").hide();
+                $("h1").text("Adopción de Mascotas");
+            });
+
+
+            
+        });
+    </script>
+   </script>
+</body>
+</html>

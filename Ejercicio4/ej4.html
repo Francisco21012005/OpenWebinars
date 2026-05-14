@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Manejador de Eventos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="estilos4.css">
+</head>
+<body>
+
+    <div class="panel">
+        <h3>Prueba de Teclado</h3>
+        <input type="text" id="elemento" placeholder="Escribe algo aquí...">
+        
+        <p id="keydownveces">Keydown: <span>0</span> veces</p>
+        <p id="teclakeydown">Código tecla (down): <span>-</span></p>
+        <hr>
+        <p id="keypressveces">Keypress: <span>0</span> veces</p>
+        <p id="teclakeypress">Código tecla (press): <span>-</span></p>
+    </div>
+
+    <div class="panel">
+        <h3>Prueba de Ratón</h3>
+        <div class="zona">Pasa el ratón aquí</div>
+        
+        <p id="entrando">Entrando(MouseEnter): <span>0</span></p>
+        <p id="saliendo">Saliendo (MouseLeave): <span>0</span></p>
+    </div>
+
+    <script>
+        $(function () {
+            var keydownVeces = 0;
+            var keypressVeces = 0;
+            var entrandoEL = 0;
+            var saliendoEL = 0;
+            var entrandoOO = 0; 
+            var saliendoOO = 0;
+
+            //ESTOS SON LOS EVENTILLOS ^^
+
+            // Evento Keydown: Se dispara al presionar cualquier tecla
+            $('#elemento').keydown(function (event) {
+                $('#keydownveces span').html(++keydownVeces);
+                $('#teclakeydown span').html(event.which);
+            });
+
+            // Evento Keypress: Se dispara cuando se genera un caracter (letras, números)
+            $('#elemento').keypress(function (event) {
+                $('#keypressveces span').html(++keypressVeces);
+                $('#teclakeypress span').html(event.which);
+            });
+
+            // Evento MouseEnter: Cuando el puntero entra en el elemento
+            $(".zona").mouseenter(function (event) {
+                $('#entrando span').html(++entrandoEL);
+            });
+
+            // Evento MouseLeave: Cuando el puntero sale del elemento
+            $(".zona").mouseleave(function (event) {
+                $('#saliendo span').html(++saliendoEL);
+            });
+        });
+    </script>
+
+</body>
+</html>

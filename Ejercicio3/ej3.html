@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ej3.html</title>
+    <link rel="stylesheet" href="estilos3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+</head>
+<body>
+
+    <header id="header">
+        <h1>Panel de Gestión Dinámica</h1>
+    </header>
+
+    <div class="card">
+        <h3>Configuración de Usuario</h3>
+        
+        <input type="text" placeholder="Nombre de usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+    </div>
+
+    <div class="card">
+        <h3>Registro de Actividad</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Estado</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>0</td>
+                    <td>Inicial</td>
+                    <td>Default</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+       $(function() {
+$("input").eq(0).val("Francisco").css("color", "blue");
+    $(":password").attr("type", "text").val("PACO");
+
+
+    $(":header").css({
+        "color": "red",
+        "background-color": "blue",
+        "margin": "0px"
+    });
+
+    $(".iconized li").html(function(index, texto) {
+        return texto + " ---> " + index;
+    });
+
+    $("td").wrapInner("<div></div>");
+
+    $("td > div").addClass("nueva_clase");
+});
+    </script>
+
+</body>
+</html>
